@@ -15,11 +15,11 @@ npm run import:source -- week-01 /path/to/old-lab01
 
 - ผล `node --version`, `npm --version`, `git --version`
 
-  ![node/npm/git version](labs/week-01/evidence/Image/7424D83A-3E28-44CB-81FB-8F761DF45D33_4_5005_c.jpeg)
+  ![Version check output](evidence/Image/7424D83A-3E28-44CB-81FB-8F761DF45D33_4_5005_c.jpeg)
 
 - Screenshot โปรแกรม `hello.js`
 
-  ![hello.js screenshot](labs/week-01/evidence/Image/04476651-2B7E-4FCB-B76B-A53773615E66_4_5005_c.jpeg)
+  ![hello.js output](evidence/Image/04476651-2B7E-4FCB-B76B-A53773615E66_4_5005_c.jpeg)
 
 ## Original Repository
 
