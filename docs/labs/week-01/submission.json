@@ -1,10 +1,10 @@
 {
   "week": "week-01",
   "title": "Developer Environment & GitHub Repository Setup",
-  "status": "ready",
+  "status": "submitted",
   "originalRepoUrl": "https://github.com/KittitatK/engse203-lab01-68543210019-4",
-  "originalCommit": "abc1234",
-  "pullRequestUrl": "",
+  "originalCommit": "0f30278f2af1dc1159398bd36e84e94f345807df",
+  "pullRequestUrl": "https://github.com/KittitatK/KittitatK-engse203-student-labs-685432100194/pull/1",
   "submissionTag": "lab-01-submission-v1",
   "testStatus": "pass",
   "notes": "รัน hello.js และตรวจ environment แล้ว",
