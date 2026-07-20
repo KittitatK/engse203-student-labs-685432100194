@@ -15,11 +15,13 @@ npm run import:source -- week-01 /path/to/old-lab01
 
 - ผล `node --version`, `npm --version`, `git --version`
 
-  ![Version check output](evidence/Image/7424D83A-3E28-44CB-81FB-8F761DF45D33_4_5005_c.jpeg)
+  <img width="1076" height="174" alt="7424D83A-3E28-44CB-81FB-8F761DF45D33_4_5005_c" src="https://github.com/user-attachments/assets/85f78f4a-a229-4c97-a34c-2f69f7136aaa" />
+
 
 - Screenshot โปรแกรม `hello.js`
 
-  ![hello.js output](evidence/Image/04476651-2B7E-4FCB-B76B-A53773615E66_4_5005_c.jpeg)
+  <img width="1320" height="68" alt="04476651-2B7E-4FCB-B76B-A53773615E66_4_5005_c" src="https://github.com/user-attachments/assets/b6bdcec3-dec5-4e0e-9c56-ef00ce0b7f1d" />
+
 
 ## Original Repository
 
