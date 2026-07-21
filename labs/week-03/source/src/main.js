@@ -1,60 +1,127 @@
 import './style.css'
-import javascriptLogo from './assets/javascript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${javascriptLogo}" class="framework" alt="JavaScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.js</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+const form = document.getElementById('request-form')
+const nameInput = document.getElementById('requester-name')
+const typeSelect = document.getElementById('request-type')
+const detailsTextarea = document.getElementById('request-details')
 
-<div class="ticks"></div>
+const nameError = document.getElementById('requesterName-error')
+const typeError = document.getElementById('requestType-error')
+const detailsError = document.getElementById('requestDetails-error')
+const detailsCount = document.getElementById('details-count')
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-          <img class="button-icon" src="${javascriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+const formStatus = document.getElementById('form-status')
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`
+const previewName = document.getElementById('preview-name')
+const previewType = document.getElementById('preview-type')
+const previewDetails = document.getElementById('preview-details')
+const previewPanel = document.querySelector('.preview-panel')
 
-setupCounter(document.querySelector('#counter'))
+const requestList = document.getElementById('request-list')
+
+function validateName() {
+  const value = nameInput.value.trim()
+  if (value.length < 2) {
+    nameInput.setAttribute('aria-invalid', 'true')
+    nameError.textContent = 'กรุณากรอกชื่ออย่างน้อย 2 ตัวอักษร'
+    return false
+  }
+  nameInput.setAttribute('aria-invalid', 'false')
+  nameError.textContent = ''
+  return true
+}
+
+function validateType() {
+  const value = typeSelect.value
+  if (!value) {
+    typeSelect.setAttribute('aria-invalid', 'true')
+    typeError.textContent = 'กรุณาเลือกประเภทคำขอ'
+    return false
+  }
+  typeSelect.setAttribute('aria-invalid', 'false')
+  typeError.textContent = ''
+  return true
+}
+
+function validateDetails() {
+  const value = detailsTextarea.value.trim()
+  const len = value.length
+  detailsCount.textContent = `${len} ตัวอักษร`
+
+  if (len < 10 || len > 111) {
+    detailsTextarea.setAttribute('aria-invalid', 'true')
+    detailsError.textContent = 'กรุณากรอกรายละเอียดระหว่าง 10-111 ตัวอักษร'
+    return false
+  }
+  detailsTextarea.setAttribute('aria-invalid', 'false')
+  detailsError.textContent = ''
+  return true
+}
+
+function updatePreview() {
+  const name = nameInput.value.trim()
+  const type = typeSelect.value
+  const details = detailsTextarea.value.trim()
+
+  previewName.textContent = name || 'ยังไม่ระบุชื่อ'
+  previewType.textContent = type || 'ยังไม่เลือกประเภท'
+  previewDetails.textContent = details || 'ยังไม่มีรายละเอียด'
+}
+
+nameInput.addEventListener('input', () => {
+  validateName()
+  updatePreview()
+})
+
+typeSelect.addEventListener('change', () => {
+  validateType()
+  updatePreview()
+})
+
+detailsTextarea.addEventListener('input', () => {
+  validateDetails()
+  updatePreview()
+})
+
+function addRequestToList(name, type, details) {
+  const li = document.createElement('li')
+  li.textContent = `${name} — ${type}: ${details}`
+  requestList.prepend(li)
+}
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault()
+
+  const isNameValid = validateName()
+  const isTypeValid = validateType()
+  const isDetailsValid = validateDetails()
+  const isFormValid = isNameValid && isTypeValid && isDetailsValid
+
+  if (!isFormValid) {
+    formStatus.textContent = 'กรุณาตรวจสอบข้อมูลในฟอร์มให้ถูกต้องก่อน submit'
+    formStatus.setAttribute('data-state', 'invalid')
+    previewPanel.setAttribute('data-state', 'invalid')
+    return
+  }
+
+  const name = nameInput.value.trim()
+  const type = typeSelect.value
+  const details = detailsTextarea.value.trim()
+
+  addRequestToList(name, type, details)
+
+  formStatus.textContent = 'ส่งคำขอสำเร็จแล้ว!'
+  formStatus.setAttribute('data-state', 'success')
+  previewPanel.setAttribute('data-state', 'success')
+
+  form.reset()
+  detailsCount.textContent = '0 ตัวอักษร'
+  nameInput.removeAttribute('aria-invalid')
+  typeSelect.removeAttribute('aria-invalid')
+  detailsTextarea.removeAttribute('aria-invalid')
+  nameError.textContent = ''
+  typeError.textContent = ''
+  detailsError.textContent = ''
+
+  updatePreview()
+})
