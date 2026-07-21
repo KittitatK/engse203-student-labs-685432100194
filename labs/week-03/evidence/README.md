@@ -98,6 +98,6 @@
 
 ตรวจสอบผ่าน Developer Tools ยืนยันว่าไม่มีข้อความ error ปรากฏใน Console ขณะใช้งาน
 
-![Console no error](image.png)
+![Console no error](<image/image.png>)
 
 </details>
