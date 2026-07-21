@@ -1,10 +1,10 @@
 {
   "week": "week-03",
   "title": "Responsive Web UI & Form Interaction",
-  "status": "ready",
+  "status": "submitted",
   "originalRepoUrl": "https://github.com/KittitatK/engse203-lab03-68543210019-4",
-  "originalCommit": "b3c0d5286740a6c7d0e9ee283f1f4e33d1b64821",
-  "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/10",
+  "originalCommit": "0247d45be23d8b40efc55f41c4492985d5dc7952",
+  "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/11",
   "submissionTag": "lab-03-submission-v1",
   "testStatus": "pass",
   "notes": "Static site ต้องมี index.html ที่ publish root"
