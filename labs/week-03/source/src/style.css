@@ -1,0 +1,363 @@
+/* =========================================
+   1. ตัวแปรสีและค่าพื้นฐาน (Tech Blue / Ocean Theme)
+   ========================================= */
+:root {
+  --primary-color: #2563eb; 
+  --primary-hover: #1d4ed8;
+  --secondary-color: #f1f5f9;
+  
+  --text-main: #334155; 
+  --text-muted: #64748b;
+  --text-heading: #0f172a;
+  
+  --border-color: #e2e8f0;
+  --surface-color: #ffffff;
+
+  --error-color: #e11d48;
+  --error-bg: #fff1f2;
+  --error-border: #fecdd3;
+  
+  --success-color: #059669;
+  --success-bg: #ecfdf5;
+  --success-border: #a7f3d0;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 4px rgba(148, 163, 184, 0.05);
+  --shadow-md: 0 10px 25px -5px rgba(148, 163, 184, 0.15);
+  --shadow-focus: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+/* =========================================
+   2. การรีเซ็ตและตั้งค่าพื้นฐาน
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3 {
+  color: var(--text-heading);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+button, input, select, textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================
+   3. โครงสร้างและ Layout
+   ========================================= */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  padding: 4rem 0 3.5rem;
+  text-align: center;
+  box-shadow: 0 4px 25px rgba(30, 58, 138, 0.15);
+  color: white;
+}
+
+.hero .eyebrow {
+  color: #93c5fd; 
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.03em;
+}
+
+.hero p {
+  color: #bfdbfe; 
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   4. Animation การโหลดหน้าเว็บ
+   ========================================= */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-grid {
+  display: grid;
+  gap: 2.5rem;
+  padding: 3.5rem 1.5rem;
+  align-items: start;
+  animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (min-width: 768px) {
+  .page-grid { grid-template-columns: 1.2fr 1fr; }
+}
+
+/* =========================================
+   5. ส่วนประกอบ UI (Panels)
+   ========================================= */
+.panel {
+  background-color: var(--surface-color);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.8); 
+  
+
+  min-width: 0; 
+}
+
+.panel h2 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+/* =========================================
+   6. ฟอร์มและการกรอกข้อมูล
+   ========================================= */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-heading);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-heading);
+  background-color: var(--secondary-color);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+}
+
+input::placeholder, textarea::placeholder {
+  color: #94a3b8;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  background-color: var(--surface-color);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-focus);
+}
+
+input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="true"] {
+  background-color: var(--error-bg);
+  border-color: var(--error-border);
+}
+
+input[aria-invalid="false"], select[aria-invalid="false"], textarea[aria-invalid="false"] {
+  background-color: var(--success-bg);
+  border-color: var(--success-border);
+}
+
+.field-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.35rem;
+}
+
+.hint, .counter {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.85rem;
+  min-height: 1.2rem;
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+/* =========================================
+   7. ปุ่ม (Buttons)
+   ========================================= */
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  flex: 1;
+  padding: 0.85rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+/* =========================================
+   8. การแสดงสถานะข้อความ (Status)
+   ========================================= */
+.status {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  text-align: center;
+  font-weight: 600;
+  display: none;
+}
+
+.status:not(:empty) {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+.status[data-state="idle"] {
+  background-color: var(--secondary-color);
+  color: var(--text-muted);
+}
+
+.status[data-state="invalid"] {
+  background-color: var(--error-bg);
+  color: var(--error-color);
+  border: 1px solid var(--error-border);
+}
+
+.status[data-state="success"] {
+  background-color: var(--success-bg);
+  color: var(--success-color);
+  border: 1px solid var(--success-border);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   9. Live Preview & Submitted Requests
+   ========================================= */
+.preview-panel {
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+  border: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+#preview {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  margin-top: 0.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+#preview div {
+  margin-bottom: 1.25rem;
+}
+
+#preview div:last-child {
+  margin-bottom: 0;
+}
+
+#preview dt {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+
+#preview dd,
+#preview-name,
+#preview-type,
+#preview-details {
+  font-size: 1.05rem;
+  color: var(--text-heading);
+  font-weight: 500;
+  white-space: pre-wrap;     /* รองรับการกด Enter ขึ้นบรรทัดใหม่ */
+  overflow-wrap: break-word; /* ตัดคำเมื่อชนขอบ */
+  word-break: break-all;     /* หักคอตัดตัวอักษรที่ติดกันยาวๆ ทันที */
+}
+
+#preview-details {
+  white-space: pre-wrap; 
+  line-height: 1.7;
+}
+
+h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.request-list {
+  list-style: none;
+}
+
+/* จัดการสีกล่อง Live Preview ตามสถานะ Submit */
+.preview-panel[data-state="success"] {
+  background-color: var(--success-bg);
+  border-color: var(--success-border);
+}
+.preview-panel[data-state="success"] h2,
+.preview-panel[data-state="success"] dt,
+.preview-panel[data-state="success"] h3 {
+  color: #065f46; 
+}
+
+.preview-panel[data-state="invalid"] {
+  background-color: var(--error-bg);
+  border-color: var(--error-border);
+}
+.preview-panel[data-state="invalid"] h2,
+.preview-panel[data-state="invalid"] dt,
+.preview-panel[data-state="invalid"] h3 {
+  color: #9f1239; 
+}
