@@ -1,37 +1,47 @@
-import { useState } from "react";
-import AppHeader from "./components/AppHeader.jsx";
-import SummaryPanel from "./components/SummaryPanel.jsx";
-import TaskForm from "./components/TaskForm.jsx";
-import FilterBar from "./components/FilterBar.jsx";
-import TaskList from "./components/TaskList.jsx";
-import { initialTasks } from "./data/initialTasks.js";
+import { useState } from 'react';
+import AppHeader from './components/AppHeader.jsx';
+import SummaryPanel from './components/SummaryPanel.jsx';
+import FilterBar from './components/FilterBar.jsx';
+import TaskList from './components/TaskList.jsx';
+import TaskForm from './components/TaskForm.jsx';//cp04
+import { initialTasks } from './data/initialTasks.js';
 
 function App() {
-  const [tasks, setTasks] = useState(initialTasks);
+  const [tasks,setTasks] = useState(initialTasks);
   const [statusFilter, setStatusFilter] = useState('all');
+
   const summary = {
     total: tasks.length,
     todo: tasks.filter((task) => task.status === 'todo').length,
     doing: tasks.filter((task) => task.status === 'doing').length,
     done: tasks.filter((task) => task.status === 'done').length,
   };
-  const filteredTasks = statusFilter === 'all' ? tasks : tasks.filter((task) => task.status === statusFilter);
-
+  const filteredTasks = statusFilter === 'all'
+    ? tasks
+    : tasks.filter((task) => task.status === statusFilter);
+  //ADD
   function handleAddTask(taskData) {
-    const newTask = { id: `TASK-${Date.now()}`, ...taskData, status: 'todo' };
+    const newTask = {
+      id: `TASK-${Date.now()}`,
+      ...taskData,
+      status: "todo",
+    };
     setTasks((currentTasks) => [newTask, ...currentTasks]);
   }
-  function handleDeleteTask(taskId) {
-    setTasks((currentTasks) => currentTasks.filter((task) => task.id !== taskId));
+  //Del
+  function handleDeleteTask(taskId) { //เก็บเฉพาะ task ที่ id ไม่ตรง = ลบตัวที่ตรง
+    setTasks((currTasks) => 
+      currTasks.filter((task) => task.id !== taskId),
+    );
   }
 
   return (
     <>
-      <AppHeader title="Study Task Board" subtitle="CP05 — Callback delete และ Conditional Rendering" />
+      <AppHeader title="Study Task Board" subtitle="CP07— Final Verification และ LAB 4 Bridge" />
       <main className="container page-content">
         <SummaryPanel summary={summary} />
         <div className="workspace-grid">
-          <TaskForm onAddTask={handleAddTask} />
+          <TaskForm onAddTask={handleAddTask}/>
           <section className="panel">
             <FilterBar value={statusFilter} onFilterChange={setStatusFilter} />
             <TaskList tasks={filteredTasks} onDeleteTask={handleDeleteTask} />
