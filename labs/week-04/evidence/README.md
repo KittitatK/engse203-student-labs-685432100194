@@ -34,7 +34,7 @@
 | **TC-09** Mobile | ทดสอบที่ 375px เป็นหนึ่งคอลัมน์ ไม่มี horizontal scroll | ✅ PASS | ![TC-09](Image/image-8.png) |
 | **TC-10** Keyboard | focus-visible เห็นชัด (outline สีเหลือง), radio ใช้ลูกศรเลือกได้ | ✅ PASS | ![TC-10](Image/image-9.png) |
 | **TC-11** Build | `npm run check` และ `npm run build` ผ่านโดยไม่มี error/warning, ไม่มี React key warning ใน console | ✅ PASS | ![TC-11](Image/image99.png) |
-| **TC-12** Pages | เปิด GitHub Pages URL ใน Incognito หน้าเว็บโหลดและทำงานได้ครบ ไม่มี asset 404 | ✅ PASS | *ไม่มีภาพประกอบ* |
+| **TC-12** Pages | เปิด GitHub Pages URL ใน Incognito หน้าเว็บโหลดและทำงานได้ครบ ไม่มี asset 404 | ✅ PASS | ![alt text](Image/image55.png) |
 
 ---
 
@@ -96,4 +96,4 @@
 | รายการ | ลิงก์ |
 |---|---|
 | Pull Request | https://github.com/KittitatK/engse203-student-labs-685432100194/pull/14 |
-| GitHub Pages | *unknown* |
+| GitHub Pages | https://kittitatk.github.io/engse203-student-labs-685432100194/labs/week-04/ |
