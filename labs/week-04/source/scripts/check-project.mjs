@@ -1,7 +1,9 @@
 import { access, readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url'; // ทำให้ใช้กับฝั่ง  windopws ได้
 
-const root = new URL('..', import.meta.url).pathname;
+const root = fileURLToPath(new URL('..', import.meta.url));
+//const root = new URL('..', import.meta.url).pathname;
 const componentNames = ['AppHeader', 'SummaryPanel', 'RequestForm', 'FilterBar', 'RequestList', 'RequestCard'];
 const requiredFiles = [
   'src/App.jsx',
