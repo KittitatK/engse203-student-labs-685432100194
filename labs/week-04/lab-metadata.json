@@ -4,8 +4,8 @@
   "status": "submitted",
   "sourceOrigin": "course-starter",
   "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
-  "originalCommit": "0d4865e990669b602590f1b6dbde0ef3b1eaddf1",
-  "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/15",
+  "originalCommit": "4800826a8fe6a7f75590eb8536a98fc403e99a21",
+  "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/16",
   "submissionTag": "lab-04-submission-v1",
   "testStatus": "pass",
   "notes": "React/Vite build output ต้องอยู่ใน publish/ ก่อนสร้าง Pages Hub"
