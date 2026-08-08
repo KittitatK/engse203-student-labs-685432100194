@@ -4,7 +4,7 @@
 
 **React State, Props & Callback — Test Evidence และผลการทดสอบ TC-01 ถึง TC-12**
 
-**🔗 [Pull Request #16](https://github.com/KittitatK/engse203-student-labs-685432100194/pull/16)**
+**🔗 [Pull Request #17](https://github.com/KittitatK/engse203-student-labs-685432100194/pull/17)**
 
 </div>
 
@@ -95,5 +95,5 @@
 
 | รายการ | ลิงก์ |
 |---|---|
-| Pull Request | https://github.com/KittitatK/engse203-student-labs-685432100194/pull/16 |
+| Pull Request | https://github.com/KittitatK/engse203-student-labs-685432100194/pull/17 |
 | GitHub Pages | https://kittitatk.github.io/engse203-student-labs-685432100194/labs/week-04/ |

@@ -1,16 +1,16 @@
 {
   "week": "week-04",
   "title": "React Campus Service Request",
-  "status": "ready",
+  "status": "submitted",
   "sourceOrigin": "course-starter",
   "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
-  "originalCommit": "81198803009aef5fdc9cc1b3c9614cd59bc1bfea",
-  "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/14",
+  "originalCommit": "4800826a8fe6a7f75590eb8536a98fc403e99a21",
+  "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/16",
   "submissionTag": "lab-04-submission-v1",
   "testStatus": "pass",
   "notes": "React/Vite build output ต้องอยู่ใน publish/ ก่อนสร้าง Pages Hub",
   "pageUrl": "https://KittitatK.github.io/engse203-student-labs-685432100194/labs/week-04/",
   "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-04/labs/week-04/source",
   "hasPublish": true,
-  "sourceEntries": 12
+  "sourceEntries": 13
 }
