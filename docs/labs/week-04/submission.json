@@ -4,13 +4,13 @@
   "status": "submitted",
   "sourceOrigin": "course-starter",
   "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
-  "originalCommit": "4800826a8fe6a7f75590eb8536a98fc403e99a21",
-  "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/16",
+  "originalCommit": "9b167ad285375f2a692761da87278953f7f3770e",
+  "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/17",
   "submissionTag": "lab-04-submission-v1",
   "testStatus": "pass",
   "notes": "React/Vite build output ต้องอยู่ใน publish/ ก่อนสร้าง Pages Hub",
   "pageUrl": "https://KittitatK.github.io/engse203-student-labs-685432100194/labs/week-04/",
   "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-04/labs/week-04/source",
   "hasPublish": true,
-  "sourceEntries": 13
+  "sourceEntries": 12
 }
