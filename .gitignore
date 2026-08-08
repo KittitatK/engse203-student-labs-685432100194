@@ -6,6 +6,7 @@
 Thumbs.db
 .vscode/
 *.log
+labs/week-04/prelab04/
 
 # docs/ เป็นผล build สำหรับ GitHub Pages และต้อง commit
 !docs/
