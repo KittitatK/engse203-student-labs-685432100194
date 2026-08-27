@@ -1,0 +1,12 @@
+{
+  "week": "week-05",
+  "title": "React Campus Service Request",
+  "status": "submitted",
+  "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-05/labs/week-05",
+  "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
+  "originalCommit": "",
+  "pullRequestUrl": "",
+  "submissionTag": "lab-05-submission-v1",
+  "testStatus": "pass",
+  "notes": "ทำโจทย์ 5A และ 5B ครบถ้วน, แก้ไขบั๊ก Template Literal ในการสร้าง ID, จัดการ Persistence และทำ Cleanup Guard เรียบร้อยผ่าน 133/133"
+}
