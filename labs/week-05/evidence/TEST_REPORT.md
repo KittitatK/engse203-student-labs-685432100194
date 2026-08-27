@@ -100,7 +100,7 @@
 | **TC-L5-21** | วางเมาส์ไว้ข้าง ๆ ใช้ `Tab` `Shift+Tab` `Enter` `Space` เท่านั้น | เข้าถึงทุกลิงก์ ปุ่ม และช่องกรอกได้ · **เห็นชัดตลอดว่าโฟกัสอยู่ที่ไหน** | สามารถโฟกัสกรอบนอกได้ด้วย CSS outline ที่ตั้งค่าไว้ | PASS | |
 | **TC-L5-12** | `npm run check` | ผ่าน **133/133** | สคริปต์ตรวจผ่านหมด (รวมถึงข้อ 3 จุดที่เคย Error ก่อนแก้) | PASS | 133/133 |
 | **TC-L5-22** | `npm run build` แล้ว `npm run preview` | build ไม่มี error · เปิด preview แล้ว refresh ที่ทุก URL ได้ | ไม่มีข้อผิดพลาดตอนบิลด์และเรียกใช้งาน production ซ้ำได้ | PASS | |
-| **TC-L5-23** | เปิด GitHub Pages **ในหน้าต่างส่วนตัว** แล้ว refresh ที่ URL ที่มี `#` | โหลดได้ทุกหน้า · refresh แล้วไม่ 404 · ข้อมูลตัวอย่างขึ้นเหมือนผู้ใช้ใหม่ | HashRouter ทำงานได้ดีใน GH Pages ไม่มีหน้า 404 ตอนรีเฟรช | PASS | `images/pages-incognito.png` |
+| **TC-L5-23** | เปิด GitHub Pages **ในหน้าต่างส่วนตัว** แล้ว refresh ที่ URL ที่มี `#` | โหลดได้ทุกหน้า · refresh แล้วไม่ 404 · ข้อมูลตัวอย่างขึ้นเหมือนผู้ใช้ใหม่ | HashRouter ทำงานได้ดีใน GH Pages ไม่มีหน้า 404 ตอนรีเฟรช | PASS | ![alt text](Picture/image10.png) |
 | **TC-L5-24** | เปิด Pull Request และติด tag `lab-05-submission-v1` | PR เปิดแล้ว · tag ถูก push ขึ้น remote | แท็กและสร้าง Pull Request ขึ้นต้นทางเรียบร้อย | PASS | URL ของ PR |
 
 ---
