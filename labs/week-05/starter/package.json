@@ -8,7 +8,8 @@
     "check": "node scripts/check-project.mjs",
     "build": "vite build",
     "preview": "vite preview",
-    "verify": "npm run check && npm run build"
+    "verify": "npm run check && npm run build",
+    "build:pages": "vite build"
   },
   "dependencies": {
     "react": "19.2.7",
