@@ -1,7 +1,7 @@
 # ENGSE203 LAB 05 — รายงานผลการทดสอบ
 
 **ชื่อ–รหัส:** นาย กิตติทัต กันธรรม รหัส 68543210019-4
-**Branch:** `lab/week-05` · **Commit:** ______________________
+**Branch:** `lab/week-05` · **Commit:** 686ecbfb419bd4ca84b58b3453a27bf02c9484b3
 **ระบบปฏิบัติการ:** Window · **เบราว์เซอร์:** Google
 **Node version (`node -v`):** v22.23.1     
 **วันที่ทดสอบ:** 27 / 08 / 2026
@@ -101,7 +101,7 @@
 | **TC-L5-12** | `npm run check` | ผ่าน **133/133** | สคริปต์ตรวจผ่านหมด (รวมถึงข้อ 3 จุดที่เคย Error ก่อนแก้) | PASS | 133/133 |
 | **TC-L5-22** | `npm run build` แล้ว `npm run preview` | build ไม่มี error · เปิด preview แล้ว refresh ที่ทุก URL ได้ | ไม่มีข้อผิดพลาดตอนบิลด์และเรียกใช้งาน production ซ้ำได้ | PASS | |
 | **TC-L5-23** | เปิด GitHub Pages **ในหน้าต่างส่วนตัว** แล้ว refresh ที่ URL ที่มี `#` | โหลดได้ทุกหน้า · refresh แล้วไม่ 404 · ข้อมูลตัวอย่างขึ้นเหมือนผู้ใช้ใหม่ | HashRouter ทำงานได้ดีใน GH Pages ไม่มีหน้า 404 ตอนรีเฟรช | PASS | ![alt text](Picture/image10.png) |
-| **TC-L5-24** | เปิด Pull Request และติด tag `lab-05-submission-v1` | PR เปิดแล้ว · tag ถูก push ขึ้น remote | แท็กและสร้าง Pull Request ขึ้นต้นทางเรียบร้อย | PASS | URL ของ PR |
+| **TC-L5-24** | เปิด Pull Request และติด tag `lab-05-submission-v1` | PR เปิดแล้ว · tag ถูก push ขึ้น remote | แท็กและสร้าง Pull Request ขึ้นต้นทางเรียบร้อย | PASS | [URL ของ PR](https://github.com/KittitatK/engse203-student-labs-685432100194/pull/19) |
 
 ---
 
