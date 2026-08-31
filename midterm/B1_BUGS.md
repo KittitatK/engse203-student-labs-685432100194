@@ -32,12 +32,12 @@
 
 | # | อาการ (ให้มาแล้ว) | ไฟล์ : บรรทัด | สาเหตุ (ทำไมผิด) | แก้อย่างไร |
 |---|---|---|---|---|
-| 1 | Console เตือนสีเหลืองเรื่องรายการ (list) | RequestList : 8  | ไม่มี key={request.id} | เพิ่ม keyid เข้าไป  |
-| 2 | ตัวเลข "รอดำเนินการ" ในแผงสรุปไม่ตรงกับที่เห็นจริง | Dashboard : 47  | " request.status ==='completed' " | "แก้เปลี่ยนจาก completed => pending " |
-| 3 | กดตัวกรอง "รอดำเนินการ" แล้วได้รายการที่ไม่ใช่ | Dashboard : 55 | " : requests.filter((request) => request.status !== statusFilter); " | " แก้จาก !== => === " |
-| 4 | เปลี่ยน URL `REQ-001` → `REQ-002` แล้วข้อมูลไม่เปลี่ยน |  |  |  |
-| 5 | กด "ลบ" แล้วรายการยังอยู่ ต้องรีเฟรชถึงหาย | Dashboard : 65 | setRequests(Requests); | เปลี่ยนจากsetRequests(Requests); เป็น setRequests(nextRequests);|
-| 6 | กด "Reset Demo Data" แล้วหน้าพัง/ว่างเปล่า | Dashboard : 75 - 77 | ไม่มี await เลยไม่สามารถรีเซ็ตได้ | เพิ่ม const seedRequests = await resetRequests(); line 75 setRequests(seedRequests); line 76 |
+| 1 | Console เตือนสีเหลืองเรื่องรายการ (list) | `RequestList : 8 ` | ไม่มี key={request.id} | เพิ่ม keyid เข้าไป  |
+| 2 | ตัวเลข "รอดำเนินการ" ในแผงสรุปไม่ตรงกับที่เห็นจริง | `Dashboard : 47`  | " request.status ==='completed' " | "แก้เปลี่ยนจาก completed => pending " |
+| 3 | กดตัวกรอง "รอดำเนินการ" แล้วได้รายการที่ไม่ใช่ | `Dashboard : 55` | " : requests.filter((request) => request.status !== statusFilter); " | " แก้จาก !== => === " |
+| 4 | เปลี่ยน URL `REQ-001` → `REQ-002` แล้วข้อมูลไม่เปลี่ยน | `RequestDetailPage : 28` | ไม่มีrequestID [ reloadKey]; | [requestId, reloadKey]; เพิ่ม requesID |
+| 5 | กด "ลบ" แล้วรายการยังอยู่ ต้องรีเฟรชถึงหาย | `Dashboard : 65` | setRequests(Requests); | เปลี่ยนจากsetRequests(Requests); เป็น setRequests(nextRequests);|
+| 6 | กด "Reset Demo Data" แล้วหน้าพัง/ว่างเปล่า | `Dashboard : 75 - 77` | ไม่มี await เลยไม่สามารถรีเซ็ตได้ | เพิ่ม const seedRequests = await resetRequests(); line 75 setRequests(seedRequests); line 76 |
 
 ---
 

@@ -44,7 +44,16 @@
 ต้นตอของปัญหานี้อยู่ในไฟล์ DashboardPage.jsx : ,47 |  |
 | 12:40 | B1-4 | ปัญหาคือกดแล้วไม่มีการรีให้แบบอัตโนมัติต้องให้ผู้ใช้กด รี เองถึงจะเห็นหน้านั้นๆ เช่น หากกรอก REQ-002 enterไปจะไม่ขึ้นอะไร ต้องกด F5 หรือ รีเองเท่านั้น | จุดที่ต้องแก้ไขใน RequestDetailPage.jsx
 ลองสังเกตฟังก์ชัน useEffect ที่คุณใช้สำหรับโหลดข้อมูลรายละเอียดคำร้อง:[requestId, reloadKey]; | เข้าไปแก้ไฟล์ RequestDetailPage.jsx : 28 |
-|  |  |  |  |  |
+| 13:18 | B2.1 | CP-B2.1 มีขั้นตอนการทำอย่างไรบ้าง | สร้าง `filteredRequests` | ลบไฟล์ `const filteredRequests = statusFilter === 'all' ? requests : requests.filter((request) => request.status === statusFilter);` และเพิ่มไฟล์ `const filteredRequests = requests.filter((request) => {
+    const matchStatus = statusFilter === 'all' || request.status === statusFilter;
+    
+    const lowerQuery = searchQuery.toLowerCase();
+    const matchSearch = 
+      request.requesterName.toLowerCase().includes(lowerQuery) || 
+      request.details.toLowerCase().includes(lowerQuery);
+
+    return matchStatus && matchSearch;
+  });` |
 |  |  |  |  |  |
 |  |  |  |  |  |
 |  |  |  |  |  |
@@ -58,4 +67,4 @@
 
 ฉันเข้าใจโค้ดทุกส่วนที่ส่ง และพร้อมอธิบายใน oral
 
-**ลงชื่อ:** ______________________
+**ลงชื่อ:** นาย กิตติทัต กันธรรม

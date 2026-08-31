@@ -49,10 +49,22 @@ function DashboardPage() {
     completed: requests.filter((request) => request.status === 'completed').length,
   }), [requests]);
 
-  const filteredRequests = statusFilter === 'all'
-    ? requests
+   const [searchQuery, setSearchQuery] = useState(''); //ทำช่องการค้นหา
 
-    : requests.filter((request) => request.status === statusFilter);
+  // รวบเงื่อนไขทั้งหมดไว้ใน const เดียว
+   const filteredRequests = requests.filter((request) => {
+    // 1. เช็กเงื่อนไขสถานะ
+    const matchStatus = statusFilter === 'all' || request.status === statusFilter;
+    
+    // 2. เช็กเงื่อนไขการค้นหา
+    const lowerQuery = searchQuery.toLowerCase();
+    const matchSearch = 
+      request.requesterName.toLowerCase().includes(lowerQuery) || 
+      request.details.toLowerCase().includes(lowerQuery);
+
+    // ส่งคืนรายการที่ผ่านทั้ง 2 เงื่อนไข
+    return matchStatus && matchSearch;
+  });
 
   function handleRetry() {
     if (scenario) setSearchParams({});
@@ -101,8 +113,21 @@ function DashboardPage() {
           <SummaryPanel summary={summary} />
           <section className="panel" aria-labelledby="request-list-title">
             <div className="section-heading"><h2 id="request-list-title">รายการคำร้อง</h2><FilterBar value={statusFilter} onFilterChange={setStatusFilter} /></div>
-            {/* TODO B2: วางช่อง <input> ค้นหา ตรงนี้ (เหนือรายการ) แล้วกรองร่วมกับตัวกรองสถานะ */}
-            {/* TODO B3: เพิ่ม onMarkDone={handleMarkDone} และเขียน handleMarkDone ให้เรียก updateRequestStatus แล้ว setRequests เพื่อให้ summary อัปเดต + รอด refresh */}
+            {<input 
+                type="search" 
+                placeholder="ค้นหาจากผู้แจ้งหรือรายละเอียด" 
+                value={searchQuery} 
+                onChange={(event) => setSearchQuery(event.target.value)} 
+                className="search-input"
+              />
+              /* TODO B2: วางช่อง <input> ค้นหา ตรงนี้ (เหนือรายการ) แล้วกรองร่วมกับตัวกรองสถานะ */
+            }
+
+
+            {
+            
+              /* TODO B3: เพิ่ม onMarkDone={handleMarkDone} และเขียน handleMarkDone ให้เรียก updateRequestStatus แล้ว setRequests เพื่อให้ summary อัปเดต + รอด refresh */
+            }
             <RequestList requests={filteredRequests} onDeleteRequest={handleDelete} />
           </section>
         </>
