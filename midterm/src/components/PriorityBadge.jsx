@@ -1,11 +1,14 @@
 function PriorityBadge({ priority }) {
-  const isUrgent = priority === 'urgent';
+  if (priority === 'urgent') {
+    return <span className="priority-urgent">เร่งด่วน</span>;
+  }
   
-  return (
-    <span className={isUrgent ? 'priority-urgent' : 'priority-normal'}>
-      {isUrgent ? 'เร่งด่วน' : 'ปกติ'}
-    </span>
-  );
+  if (priority === 'normal') {
+    return <span className="priority-normal">ปกติ</span>;
+  }
+  
+  // จัดการ Edge case: ถ้าเป็นค่าอื่นๆ หรือ undefined
+  return <span className="priority-unknown">ไม่ระบุ</span>;
 }
 
 export default PriorityBadge;
