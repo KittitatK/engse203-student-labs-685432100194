@@ -16,6 +16,8 @@ export function createApp() {
    */
   app.use(logger);            
   app.use(express.json()); 
+  app.use
+  app.use(errorHandler);
 
   /**
    * TODO W06-A2 (CP01) · route ทดสอบว่าเซิร์ฟเวอร์ทำงาน
