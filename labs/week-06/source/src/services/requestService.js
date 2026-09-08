@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+import { readFile , writeFile } from 'node:fs/promises';
 
 const SEED_PATH = new URL('../../data/initialRequests.json', import.meta.url);
 const DATA_PATH = new URL('../../data/requests.json', import.meta.url);
@@ -9,7 +9,7 @@ let requests = [];
 /** โหลดข้อมูลตัวอย่างตอนเซิร์ฟเวอร์เริ่มทำงาน — ให้มาแล้ว ไม่ต้องแก้ */
 export async function loadSeed() {
   try {
-    const raw = await readFile(SEED_PATH, 'utf8');
+    const raw = await readFile(DATA_PATH, 'utf8');
     requests = JSON.parse(raw);
   }catch{
     const raw = await readFile(SEED_PATH, 'utf8');
@@ -55,7 +55,7 @@ function createId() {
  * ลำดับ: สร้าง object ใหม่ (ใช้ createId()) → ตัดช่องว่างหัวท้ายทุก field ที่เป็นข้อความ
  *        → status เริ่มต้นเป็น 'pending' เสมอ → push เข้า requests → คืนสำเนา
  */
-export async function create(input) {
+export  function create(input) {
   const newRequest = {
     id: createId(),
     requesterName: input.requesterName.trim(),
@@ -66,7 +66,7 @@ export async function create(input) {
     status: 'pending',
   };
   requests.push(newRequest);
-  await persist(); // บันทึกลงไฟล์ทันที — ไม่ต้องรอให้เซิร์ฟเวอร์ปิด
+  persist(); // บันทึกลงไฟล์ทันที — ไม่ต้องรอให้เซิร์ฟเวอร์ปิด
   return structuredClone(newRequest);
 }
 
@@ -74,9 +74,21 @@ export async function create(input) {
  * TODO W06-S4 (⭐ Challenge) · เปลี่ยนสถานะคำร้อง
  * - ไม่พบคืน null · พบแล้วเปลี่ยน status และคืนสำเนา
  */
-export function updateStatus(id, status) {
-  throw new Error('TODO W06-S4: updateStatus');
+export async function updateStatus(id, status) {
+  const index = requests.findIndex(req => req.id === id);
+  
+  // 2. ถ้าไม่พบข้อมูล ให้ return null กลับไป
+  if (index === -1) {
+    return null; 
+  }
+  // 3. อัปเดตสถานะใหม่
+  requests[index].status = status;
+  // 4. บันทึกการเปลี่ยนแปลงลงไฟล์ JSON
+  await persist();
+  // 5. ส่งข้อมูลที่อัปเดตแล้วกลับไป
+  return requests[index];
 }
+
 
 /**
  * TODO W06-S5 (CP05) · ลบคำร้องตามรหัส

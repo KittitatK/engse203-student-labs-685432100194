@@ -55,13 +55,13 @@ In-Class เราทำให้ API **ทำงานได้** · Take-Home 
 
 เปิด `src/services/requestService.js` แล้วค้นหาคำว่า `req` และ `res`
 
-- [ ] **ต้องไม่เจอเลย** — ถ้าเจอแปลว่า service รู้จัก HTTP ซึ่งผิดหลักการ
-- [ ] ทุกฟังก์ชันใน service คืนข้อมูลหรือ `null`/`true`/`false` — ไม่ส่ง response เอง
+- [x] **ต้องไม่เจอเลย** — ถ้าเจอแปลว่า service รู้จัก HTTP ซึ่งผิดหลักการ
+- [x] ทุกฟังก์ชันใน service คืนข้อมูลหรือ `null`/`true`/`false` — ไม่ส่ง response เอง
 
 เปิด `src/controllers/requestController.js`
 
-- [ ] ไม่มีการเข้าถึงตัวแปร `requests` โดยตรง — ต้องผ่าน `service.` เท่านั้น
-- [ ] ทุกฟังก์ชันจบด้วยการส่ง response (`res.json()` หรือ `res.status().end()`)
+- [x] ไม่มีการเข้าถึงตัวแปร `requests` โดยตรง — ต้องผ่าน `service.` เท่านั้น
+- [x] ทุกฟังก์ชันจบด้วยการส่ง response (`res.json()` หรือ `res.status().end()`)
 
 ## ⚠ ทำไมเรื่องนี้สำคัญ
 
@@ -73,9 +73,9 @@ In-Class เราทำให้ API **ทำงานได้** · Take-Home 
 
 ### ✓ ผ่าน CP06 เมื่อ
 
-- [ ] ค้นหา `req` / `res` ใน `services/` แล้วไม่เจอ
-- [ ] controller ไม่แตะข้อมูลโดยตรง
-- [ ] `npm run check` ยังผ่านเท่าเดิม (การแยกชั้นไม่ทำให้พฤติกรรมเปลี่ยน)
+- [x] ค้นหา `req` / `res` ใน `services/` แล้วไม่เจอ
+- [x] controller ไม่แตะข้อมูลโดยตรง
+- [x] `npm run check` ยังผ่านเท่าเดิม (การแยกชั้นไม่ทำให้พฤติกรรมเปลี่ยน)
 
 ---
 
@@ -149,8 +149,8 @@ app.use(errorHandler);    // ต้องอยู่ท้ายสุดเส
 
 ### ✓ ผ่าน CP07 เมื่อ
 
-- [ ] path ที่ไม่มี → 404 พร้อม JSON (ไม่ใช่หน้า HTML ของ Express)
-- [ ] `npm run check` ผ่านส่วน 🏠 ที่บ้าน **2/2**
+- [x] path ที่ไม่มี → 404 พร้อม JSON (ไม่ใช่หน้า HTML ของ Express)
+- [x] `npm run check` ผ่านส่วน 🏠 ที่บ้าน **2/2**
 
 ---
 
@@ -215,14 +215,14 @@ export async function loadSeed() {
 
 | # | Method | Path | ส่งอะไร | status ที่ได้ | ผ่าน |
 |---|---|---|---|---|---|
-| 1 | GET | `/api/requests` | — | | ☐ |
-| 2 | GET | `/api/requests/REQ-001` | — | | ☐ |
-| 3 | GET | `/api/requests/REQ-999` | — | | ☐ |
-| 4 | POST | `/api/requests` | ข้อมูลครบ | | ☐ |
-| 5 | POST | `/api/requests` | ข้อมูลไม่ครบ | | ☐ |
-| 6 | DELETE | `/api/requests/REQ-003` | — | | ☐ |
-| 7 | DELETE | `/api/requests/REQ-999` | — | | ☐ |
-| 8 | GET | `/api/unknown` | — | | ☐ |
+| 1 | GET | `/api/requests` | — | | [x] |
+| 2 | GET | `/api/requests/REQ-001` | — | | [x] |
+| 3 | GET | `/api/requests/REQ-999` | — | | [x] |
+| 4 | POST | `/api/requests` | ข้อมูลครบ | | [x] |
+| 5 | POST | `/api/requests` | ข้อมูลไม่ครบ | | [x] |
+| 6 | DELETE | `/api/requests/REQ-003` | — | | [x] |
+| 7 | DELETE | `/api/requests/REQ-999` | — | | [x] |
+| 8 | GET | `/api/unknown` | — | | [x] |
 
 > **บันทึกผลจริง** — ถ้าข้อไหนไม่ผ่านให้เขียนว่าไม่ผ่านพร้อมสิ่งที่เห็นจริง · รายงานที่เขียนย้อนหลังจะเป็น "ผ่าน" ทั้งหมดเสมอ ซึ่งไม่มีคุณค่า
 
@@ -238,10 +238,10 @@ export async function loadSeed() {
 
 ### ✓ ผ่าน CP08 เมื่อ
 
-- [ ] เพิ่มคำร้อง → ปิดเซิร์ฟเวอร์ → เปิดใหม่ → **คำร้องยังอยู่**
-- [ ] `API_TEST.md` กรอกครบ 8 รายการ
-- [ ] Screenshot ครบ 3 ภาพ
-- [ ] `data/requests.json` อยู่ใน `.gitignore`
+- [x] เพิ่มคำร้อง → ปิดเซิร์ฟเวอร์ → เปิดใหม่ → **คำร้องยังอยู่**
+- [x] `API_TEST.md` กรอกครบ 8 รายการ
+- [x] Screenshot ครบ 3 ภาพ
+- [x] `data/requests.json` อยู่ใน `.gitignore`
 
 ---
 
@@ -351,24 +351,24 @@ git push origin lab-06-submission-v1
 
 ### โค้ด
 
-- [ ] `npm run check` ได้อย่างน้อย **25/28**
-- [ ] `npm run dev` เปิดได้ไม่มี error
-- [ ] service ไม่มี `req` หรือ `res`
-- [ ] เพิ่มคำร้อง → รีสตาร์ทเซิร์ฟเวอร์ → ข้อมูลยังอยู่
+- [x] `npm run check` ได้อย่างน้อย **25/28**
+- [x] `npm run dev` เปิดได้ไม่มี error
+- [x] service ไม่มี `req` หรือ `res`
+- [x] เพิ่มคำร้อง → รีสตาร์ทเซิร์ฟเวอร์ → ข้อมูลยังอยู่
 
 ### หลักฐาน
 
-- [ ] `evidence/API_TEST.md` กรอกครบ 8 รายการ **ตามผลจริง**
-- [ ] Screenshot 3 ภาพใน `evidence/images/`
-- [ ] Postman collection อยู่ใน `evidence/`
-- [ ] `AI_USAGE.md` กรอกแล้ว (ถ้าใช้ AI)
+- [x] `evidence/API_TEST.md` กรอกครบ 8 รายการ **ตามผลจริง**
+- [x] Screenshot 3 ภาพใน `evidence/images/`
+- [x] Postman collection อยู่ใน `evidence/`
+- [x] `AI_USAGE.md` กรอกแล้ว (ถ้าใช้ AI)
 
 ### Git
 
-- [ ] `.gitignore` มี `node_modules/` และ `data/requests.json`
-- [ ] `git status` สะอาด ไม่มีไฟล์ค้าง
-- [ ] push ขึ้น branch `unit3/week-06`
-- [ ] tag `lab-06-submission-v1`
+- [x] `.gitignore` มี `node_modules/` และ `data/requests.json`
+- [x] `git status` สะอาด ไม่มีไฟล์ค้าง
+- [x] push ขึ้น branch `unit3/week-06`
+- [x] tag `lab-06-submission-v1`
 
 ---
 

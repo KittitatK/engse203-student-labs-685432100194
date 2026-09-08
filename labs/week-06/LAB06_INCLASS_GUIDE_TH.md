@@ -98,10 +98,10 @@ https://jsonplaceholder.typicode.com/posts/1
 
 **หาให้เจอ**
 
-- [ ] request ที่ **method เป็น GET**
-- [ ] request ที่ได้ **status 200**
-- [ ] request ที่ได้ข้อมูล **JSON** กลับมา (ดูคอลัมน์ Type)
-- [ ] คลิกที่ request หนึ่งอัน → ดูแท็บ **Headers**, **Response**
+- [x] request ที่ **method เป็น GET**
+- [x] request ที่ได้ **status 200**
+- [x] request ที่ได้ข้อมูล **JSON** กลับมา (ดูคอลัมน์ Type)
+- [x] คลิกที่ request หนึ่งอัน → ดูแท็บ **Headers**, **Response**
 
 > **ทักษะที่ต้องได้** — ชี้ได้ว่า method, status code, request body, response อยู่ตรงไหนในหน้าจอ DevTools
 
@@ -123,10 +123,10 @@ https://jsonplaceholder.typicode.com/posts/1
 
 ### ✓ ผ่าน CP00 เมื่อ
 
-- [ ] เปิด public API ในเบราว์เซอร์แล้วเห็น JSON
-- [ ] ชี้ได้ว่าใน DevTools Network method/status อยู่ตรงไหน
-- [ ] ยิง GET และ POST ด้วย Postman ได้
-- [ ] **สังเกตได้ว่า POST สำเร็จได้ status 201 ไม่ใช่ 200**
+- [x] เปิด public API ในเบราว์เซอร์แล้วเห็น JSON
+- [x] ชี้ได้ว่าใน DevTools Network method/status อยู่ตรงไหน
+- [x] ยิง GET และ POST ด้วย Postman ได้
+- [x] **สังเกตได้ว่า POST สำเร็จได้ status 201 ไม่ใช่ 200**
 
 ### 💬 คำถามที่ต้องตอบได้
 
@@ -158,8 +158,8 @@ app.get('/', (req, res) => {
 
 ### ✓ ผ่าน CP01 เมื่อ
 
-- [ ] เบราว์เซอร์แสดง `{"message":"Campus Service API is running","version":"1.0.0"}`
-- [ ] ยิงด้วย Postman ได้ **status 200**
+- [x] เบราว์เซอร์แสดง `{"message":"Campus Service API is running","version":"1.0.0"}`
+- [x] ยิงด้วย Postman ได้ **status 200**
 
 ### ⚠ ถ้าไม่ผ่าน
 
@@ -265,8 +265,8 @@ router.get('/:id', ...)     // ✓ มีตัวแปร เขียนห�
 
 ### ✓ ผ่าน CP02 เมื่อ
 
-- [ ] ทั้ง 3 กรณีข้างบนได้ status ถูกต้อง
-- [ ] ข้อมูลที่ได้มี field ครบ 7 ตัว (`id`, `requesterName`, `requestType`, `location`, `details`, `priority`, `status`)
+- [x] ทั้ง 3 กรณีข้างบนได้ status ถูกต้อง
+- [x] ข้อมูลที่ได้มี field ครบ 7 ตัว (`id`, `requesterName`, `requestType`, `location`, `details`, `priority`, `status`)
 
 ### 💬 คำถามที่ต้องตอบได้
 
@@ -327,8 +327,8 @@ GET /api/requests/REQ-999 → 404 (1ms)
 
 ### ✓ ผ่าน CP03 เมื่อ
 
-- [ ] terminal พิมพ์ log ทุกครั้งที่มีคำขอ
-- [ ] log แสดง method, path และ status code ถูกต้อง
+- [x] terminal พิมพ์ log ทุกครั้งที่มีคำขอ
+- [x] log แสดง method, path และ status code ถูกต้อง
 
 > **checker ตรวจข้อนี้ไม่ได้** — ต้องดูด้วยตาว่า log ออกมาจริงหรือไม่
 
@@ -434,9 +434,9 @@ router.post('/', validateRequest, controller.createRequest);
 
 ### ✓ ผ่าน CP04 เมื่อ
 
-- [ ] POST ถูกต้อง → 201 · คำร้องใหม่มี `status: "pending"` และ `id` ขึ้นต้นด้วย `REQ-`
-- [ ] POST ไม่ครบ → 400 พร้อมข้อความที่คนทั่วไปเข้าใจ (ไม่ใช่ `TypeError`)
-- [ ] `GET /api/requests` เห็นคำร้องที่เพิ่งเพิ่ม
+- [x] POST ถูกต้อง → 201 · คำร้องใหม่มี `status: "pending"` และ `id` ขึ้นต้นด้วย `REQ-`
+- [x] POST ไม่ครบ → 400 พร้อมข้อความที่คนทั่วไปเข้าใจ (ไม่ใช่ `TypeError`)
+- [x] `GET /api/requests` เห็นคำร้องที่เพิ่งเพิ่ม
 
 ### 💬 คำถามที่ต้องตอบได้
 
@@ -482,8 +482,8 @@ res.status(204).end();
 
 ### ✓ ผ่าน CP05 เมื่อ
 
-- [ ] ลบได้ → 204 · ไม่พบ → 404
-- [ ] ลบแล้วหายจากรายการจริง
+- [x] ลบได้ → 204 · ไม่พบ → 404
+- [x] ลบแล้วหายจากรายการจริง
 
 ### 💬 คำถามที่ต้องตอบได้
 
@@ -522,11 +522,11 @@ npm run check -- --inclass | grep "TODO"
 
 ## เช็คลิสต์ก่อนออกจากห้อง
 
-- [ ] `npm run check -- --inclass` ผ่าน **23/23**
-- [ ] terminal เห็น log ทุกคำขอ (checker ตรวจไม่ได้ ต้องดูเอง)
-- [ ] ยิงครบทุก endpoint ใน Postman แล้วได้ status ถูกต้อง
-- [ ] `git add -A && git commit -m "LAB06 in-class: CRUD API"` แล้ว
-- [ ] **รู้ว่าต้องทำอะไรต่อที่บ้าน** (เปิดคู่มือ Take-Home)
+- [x] `npm run check -- --inclass` ผ่าน **23/23**
+- [x] terminal เห็น log ทุกคำขอ (checker ตรวจไม่ได้ ต้องดูเอง)
+- [x] ยิงครบทุก endpoint ใน Postman แล้วได้ status ถูกต้อง
+- [x] `git add -A && git commit -m "LAB06 in-class: CRUD API"` แล้ว
+- [x] **รู้ว่าต้องทำอะไรต่อที่บ้าน** (เปิดคู่มือ Take-Home)
 
 ---
 

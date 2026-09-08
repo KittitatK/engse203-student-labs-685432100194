@@ -16,8 +16,8 @@ export function createApp() {
    */
   app.use(logger);            
   app.use(express.json()); 
-  app.use
-  app.use(errorHandler);
+ 
+  
 
   /**
    * TODO W06-A2 (CP01) · route ทดสอบว่าเซิร์ฟเวอร์ทำงาน
@@ -38,6 +38,8 @@ export function createApp() {
    * TODO W06-A4 (🏠 CP07) · ปิดท้ายด้วย notFound แล้วตามด้วย errorHandler
    * ⚠ สองตัวนี้ต้องอยู่ท้ายสุด หลัง route ทั้งหมด
    */
+  app.use(notFound);
+  app.use(errorHandler);
 
   return app;
 }
