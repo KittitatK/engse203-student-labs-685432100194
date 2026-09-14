@@ -3,12 +3,14 @@ import { config } from './config.js';
 import requestRoutes from './routes/requestRoutes.js';
 import { errorHandler, notFound } from './middleware/errorHandler.js';
 import cors from 'cors';
+import morgan from 'morgan';
 
 
 export function createApp() {
   const app = express();
 
   app.use(cors({ origin: config.corsOrigin }));
+  app.use(morgan(config.isProduction ? 'combined' : 'dev'));
 
   /**
    * TODO W07-A1 (CP10) · เปิด CORS
