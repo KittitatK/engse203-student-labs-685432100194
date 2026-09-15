@@ -8,7 +8,9 @@ const router = express.Router();
 router.get('/', asyncHandler(controller.listRequests));
 router.get('/:id', asyncHandler(controller.getRequest));
 router.post('/', asyncHandler(controller.createRequest));
+router.post('/reset', asyncHandler(controller.resetRequests));
 router.put('/:id', asyncHandler(controller.updateRequestStatus));
 router.delete('/:id', asyncHandler(controller.deleteRequest));
+router.post('/reset', asyncHandler(controller.resetRequests));
 
 export default router;

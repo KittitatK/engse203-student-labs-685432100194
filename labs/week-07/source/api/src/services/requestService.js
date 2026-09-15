@@ -11,6 +11,11 @@ export async function loadSeed() {
   return requests;
 }
 
+export async function reset() {
+  await loadSeed();
+  return findAll();
+}
+
 export function findAll({ status } = {}) {
   if (!status) return structuredClone(requests);
   return structuredClone(requests.filter((r) => r.status === status));

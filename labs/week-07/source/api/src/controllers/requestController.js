@@ -8,6 +8,10 @@ export function listRequests(req, res) {
   res.status(200).json(service.findAll({ status }));
 }
 
+export async function resetRequests(req, res) {
+  res.status(200).json(await service.reset());
+}
+
 export function getRequest(req, res) {
   const found = service.findById(req.params.id);
   if (!found) {
