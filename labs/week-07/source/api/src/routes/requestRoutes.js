@@ -1,14 +1,14 @@
-import { Router } from 'express';
+import express from 'express';
 import * as controller from '../controllers/requestController.js';
-import { validateRequest } from '../middleware/validateRequest.js';
+import { asyncHandler } from '../middleware/errorHandler.js';
 
-const router = Router();
+const router = express.Router();
 
-// route เจาะจงต้องมาก่อน route ที่มี :id เสมอ
-router.get('/', controller.listRequests);
-router.post('/', validateRequest, controller.createRequest);
-router.get('/:id', controller.getRequest);
-router.put('/:id', controller.updateRequestStatus);
-router.delete('/:id', controller.deleteRequest);
+// นำ asyncHandler() ไปครอบฟังก์ชันของ controller แบบนี้
+router.get('/', asyncHandler(controller.listRequests));
+router.get('/:id', asyncHandler(controller.getRequest));
+router.post('/', asyncHandler(controller.createRequest));
+router.put('/:id', asyncHandler(controller.updateRequestStatus));
+router.delete('/:id', asyncHandler(controller.deleteRequest));
 
 export default router;

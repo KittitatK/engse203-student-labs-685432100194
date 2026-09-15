@@ -1,3 +1,19 @@
+import { config } from '../config.js';
+
+// ⭐ 1 · AppError
+export class AppError extends Error {
+  constructor(message, status = 500) {
+    super(message);
+    this.status = status;
+  }
+}
+
+// ⭐ 2 · asyncHandler
+export function asyncHandler(fn) {
+  return (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next);
+}
+
+
 /** จับ error ที่หลุดมาจากทุก route — ต้องมี 4 พารามิเตอร์ Express ถึงจะรู้ว่าเป็น error handler */
 export function errorHandler(err, req, res, next) {
   const status = err.status ?? 500;

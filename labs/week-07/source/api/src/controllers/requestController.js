@@ -1,6 +1,5 @@
 import * as service from '../services/requestService.js';
-// สมมติว่าคุณเซฟ AppError.js ไว้ในโฟลเดอร์ middleware
-import { AppError } from '../middleware/appError.js'; 
+import { AppError } from '../middleware/errorHandler.js';
 
 /** controller รู้จัก req/res และตัดสิน status code — แต่ไม่จัดการข้อมูลเอง */
 
@@ -25,11 +24,11 @@ export function createRequest(req, res) {
 export function updateRequestStatus(req, res) {
   const ALLOWED = ['pending', 'in-progress', 'completed'];
   const { status } = req.body ?? {};
-  
+
   if (!ALLOWED.includes(status)) {
     throw new AppError('สถานะต้องเป็น pending, in-progress หรือ completed', 400);
   }
-  
+
   const updated = service.updateStatus(req.params.id, status);
   if (!updated) {
     throw new AppError(`ไม่พบคำร้องรหัส ${req.params.id}`, 404);

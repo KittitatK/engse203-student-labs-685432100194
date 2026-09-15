@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import ErrorState from '../components/ErrorState.jsx';
 import LoadingState from '../components/LoadingState.jsx';
 import useManualReload from '../hooks/useManualReload.js';
-import { getRequestById } from '../services/requestService.js';
+import { getRequestById, updateRequestStatus } from '../services/requestService.js';
 
 function RequestDetailPage() {
   const { requestId } = useParams();
@@ -59,6 +59,7 @@ function RequestDetailPage() {
         <div style={{ display: 'flex', gap: '10px', marginBottom: '1rem' }}>
           <button 
             className="button in-progress"
+            style={{ backgroundColor: 'var(--teal)', color: 'white' }}
             onClick={() => handleChangeStatus('in-progress')}
             disabled={isUpdating}
           >
@@ -66,6 +67,7 @@ function RequestDetailPage() {
           </button>
           <button 
             className="button completed"
+            style={{ backgroundColor: 'var(--success)', color: 'white' }}
             onClick={() => handleChangeStatus('completed')} 
             disabled={isUpdating}
           >
