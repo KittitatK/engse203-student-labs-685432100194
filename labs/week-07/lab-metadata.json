@@ -1,0 +1,12 @@
+{
+  "week": "week-07",
+  "title": "RESTful API, Validation & Error Handling",
+  "status": "submitted",
+  "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-07/labs/week-07",
+  "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
+  "originalCommit": "5db2a617a8d3e9c1711261a531a10bb73ad44e1a",
+  "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/23",
+  "submissionTag": "lab-07-submission-v1",
+  "testStatus": "pass",
+  "notes": "Static site ต้องมี index.html ที่ publish root"
+}
