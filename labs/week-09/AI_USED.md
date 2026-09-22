@@ -1,6 +1,6 @@
 # บันทึกการใช้งาน AI ช่วยเหลือในการทำโปรเจกต์ (AI_USED.md)
 
-**เครื่องมือ AI ที่ใช้งาน:** Antigravity (Google Gemini 3.8 Flash)  
+**เครื่องมือ AI ที่ใช้งาน:** Gemini  
 **สัปดาห์ / งานที่ทำ:** Week 09 — Relational Database Design & SQL Fundamentals  
 **รหัสนักศึกษา:** 68543210019-4  
 
