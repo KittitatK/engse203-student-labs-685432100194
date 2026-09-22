@@ -62,7 +62,7 @@
   },
   {
     "week": "week-05",
-    "title": "React Campus Service Request",
+    "title": "React Routing, Data Fetching และ Front-end Mini App",
     "status": "submitted",
     "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-05/labs/week-05",
     "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
@@ -78,7 +78,7 @@
   },
   {
     "week": "week-06",
-    "title": "React Campus Service Request",
+    "title": "Node.js / Express API Foundation",
     "status": "submitted",
     "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-06/labs/week-06",
     "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
@@ -110,7 +110,7 @@
   },
   {
     "week": "week-09",
-    "title": "RESTful API, Validation & Error Handling",
+    "title": "Relational Database & SQL (SQLite)",
     "status": "submitted",
     "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-09/labs/week-09",
     "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
