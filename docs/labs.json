@@ -99,7 +99,7 @@
     "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-07/labs/week-07",
     "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
     "originalCommit": "5db2a617a8d3e9c1711261a531a10bb73ad44e1a",
-    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/25",
+    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/24",
     "submissionTag": "lab-07-submission-v1",
     "testStatus": "pass",
     "notes": "Static site ต้องมี index.html ที่ publish root",
@@ -107,5 +107,21 @@
     "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-07/labs/week-07/source",
     "hasPublish": true,
     "sourceEntries": 6
+  },
+  {
+    "week": "week-09",
+    "title": "RESTful API, Validation & Error Handling",
+    "status": "submitted",
+    "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-09/labs/week-09",
+    "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
+    "originalCommit": "691a1ab5c9f241482007063e151b67236276cd76",
+    "pullRequestUrl": "",
+    "submissionTag": "lab-09-submission-v1",
+    "testStatus": "pass",
+    "notes": "Relational Database Design (1:N), SQLite Schema & Constraints, SQL Queries (8 ข้อ), Data Modeling (DATA_MODEL.md), Constraint Testing (CP25) และ Challenge ครบถ้วน (30/30 รายการ)",
+    "pageUrl": "https://KittitatK.github.io/engse203-student-labs-685432100194/labs/week-09/",
+    "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-09/labs/week-09/source",
+    "hasPublish": false,
+    "sourceEntries": 7
   }
 ]
