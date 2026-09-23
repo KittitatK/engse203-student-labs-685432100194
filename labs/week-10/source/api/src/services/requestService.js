@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DatabaseSync } from 'node:sqlite';
+import { AppError } from '../middleware/errorHandler.js';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const API_ROOT = path.resolve(HERE, '../..');
@@ -47,14 +48,16 @@ export async function loadSeed() {
   ).get().c;
 
   if (!ready) db.exec(readFileSync(SCHEMA_FILE, 'utf8'));
-  
-/*
-  try {
-    requests = JSON.parse(await readFile(DATA, 'utf8'));
-  } catch {
-    requests = [];
-  }
-*/
+  db.exec('CREATE INDEX IF NOT EXISTS idx_requests_status ON requests(status)');
+  db.exec('CREATE INDEX IF NOT EXISTS idx_requests_requester ON requests(requester_id)');
+
+  /*
+    try {
+      requests = JSON.parse(await readFile(DATA, 'utf8'));
+    } catch {
+      requests = [];
+    }
+  */
 
 }
 
@@ -77,7 +80,7 @@ export function findAll({ status } = {}) {
    *   - ถ้ามี status ให้เติม WHERE r.status = ?
    *   คำใบ้: คัดลอก query จาก queries.sql ที่ทำสัปดาห์ที่แล้วมาปรับ
    */
-  
+
   return status
     ? db.prepare(`${SELECT_SHAPE} WHERE r.status = ? ORDER BY r.id`).all(status)
     : db.prepare(`${SELECT_SHAPE} ORDER BY r.id`).all();
@@ -94,7 +97,7 @@ function resolveUserId(name) {
 
   const slug = Date.now().toString(36);
   return db.prepare('INSERT INTO users (name, department, email) VALUES (?,?,?)')
-           .run(name, 'ไม่ระบุ', `user-${slug}@rmutl.ac.th`).lastInsertRowid;
+    .run(name, 'ไม่ระบุ', `user-${slug}@rmutl.ac.th`).lastInsertRowid;
 }
 
 function nextId() {
@@ -107,24 +110,37 @@ function nextId() {
 
 export function create(input) {
   const id = nextId();
-  db.prepare(
-    `INSERT INTO requests (id, requester_id, request_type, location, details, priority)
-     VALUES (?, ?, ?, ?, ?, ?)`
-  ).run(
-    id,
-    resolveUserId(input.requesterName.trim()),
-    input.requestType,
-    input.location.trim(),
-    input.details.trim(),
-    input.priority ?? 'normal'
-  );
-  return findById(id);   // คืนรูปแบบที่ frontend ต้องการ
+  db.exec('BEGIN');
+  try {
+    const requesterId = resolveUserId(input.requesterName.trim());
+    db.prepare(
+      `INSERT INTO requests (id, requester_id, request_type, location, details, priority)
+       VALUES (?, ?, ?, ?, ?, ?)`
+    ).run(
+      id,
+      requesterId,
+      input.requestType,
+      input.location.trim(),
+      input.details.trim(),
+      input.priority ?? 'normal'
+    );
+    db.exec('COMMIT');
+  } catch (err) {
+    db.exec('ROLLBACK');
+    throw toAppError(err);
+  }
+  return findById(id);
 }
 
+
 export function updateStatus(id, status) {
-  const result = db.prepare('UPDATE requests SET status = ? WHERE id = ?')
-                   .run(status, id);
-  return result.changes ? findById(id) : null;
+  try {
+    const result = db.prepare('UPDATE requests SET status = ? WHERE id = ?')
+                     .run(status, id);
+    return result.changes ? findById(id) : null;
+  } catch (err) {
+    throw toAppError(err);
+  }
 }
 
 export function remove(id) {
@@ -133,3 +149,20 @@ export function remove(id) {
   db.prepare('DELETE FROM requests WHERE id = ?').run(id);
   return target;                     // ③ คืนของที่ลบ
 }
+
+function toAppError(err) {
+  const m = err.message ?? '';
+  if (m.includes('FOREIGN KEY')) return new AppError('อ้างถึงข้อมูลที่ไม่มีอยู่จริง', 400);
+  if (m.includes('CHECK')) return new AppError('ค่าที่ส่งมาไม่อยู่ในรายการที่กำหนด', 400);
+  if (m.includes('UNIQUE')) return new AppError('ข้อมูลนี้มีอยู่แล้วในระบบ', 409);
+  return err;   // error อื่นปล่อยผ่าน → errorHandler ตอบ 500
+}
+
+// ── ⭐ Challenge: Users queries ──
+export function findAllUsers() {
+  return db.prepare('SELECT id, name, department, email FROM users ORDER BY id').all();
+}
+
+export function findRequestsByUserId(userId) {
+  return db.prepare(`${SELECT_SHAPE} WHERE r.requester_id = ? ORDER BY r.id`).all(userId);
+}

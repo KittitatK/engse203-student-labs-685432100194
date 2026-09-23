@@ -1,5 +1,6 @@
 import { config } from '../config.js';
 
+
 /** error ที่เรารู้สาเหตุและอยากกำหนด status เอง */
 export class AppError extends Error {
   constructor(message, status = 500) {
