@@ -5,7 +5,7 @@
   "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/unit4/week-10/labs/week-10",
   "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
   "originalCommit": "1078f6ef9373acf7f6c1c467c8cd117186b5b909",
-  "pullRequestUrl": "",
+  "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/30",
   "submissionTag": "lab-10-submission-v1",
   "testStatus": "pass",
   "notes": "เชื่อมต่อ Node.js เข้ากับ SQLite ด้วย node:sqlite, Data Mapping (JOIN/AS), Parameterized Queries ป้องกัน SQL Injection (CP31), Database Error Handling ด้วย AppError (CP32), Automated Testing ด้วย supertest (CP33), API Contract v2.0.0 (CP34), และ Challenge ครบถ้วน (31/31 รายการ)"
