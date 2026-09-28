@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "verify": "npm run check && npm run build",
-    "check": "node --disable-warning=ExperimentalWarning check-week11.mjs",
+    "check": "node --disable-warning=ExperimentalWarning check-week11.mjs"
 
 
   },
