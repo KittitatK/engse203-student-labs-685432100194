@@ -4,11 +4,18 @@
   "version": "0.3.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node --disable-warning=ExperimentalWarning --watch --env-file=.env src/server.js",
+    "start": "node --disable-warning=ExperimentalWarning src/server.js",
+    "check": "node scripts/check-project.mjs",
+    "test": "node --disable-warning=ExperimentalWarning --test \"tests/*.test.js\"",
+    "db:setup": "node --disable-warning=ExperimentalWarning scripts/setup-db.mjs",
+    "db:reset": "node --disable-warning=ExperimentalWarning scripts/setup-db.mjs --force"
+
+    /*"dev": "vite",
     "check": "node scripts/check-project.mjs",
     "build": "vite build",
     "preview": "vite preview",
-    "verify": "npm run check && npm run build"
+    "verify": "npm run check && npm run build"*/
   },
   "dependencies": {
     "react": "19.2.7",
