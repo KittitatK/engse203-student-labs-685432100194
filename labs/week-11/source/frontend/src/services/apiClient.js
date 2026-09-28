@@ -3,7 +3,9 @@
  * ทุกฟังก์ชันใน requestService เรียกผ่านตรงนี้
  */
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'https://onrenderlabweek11.onrender.com';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? '';
+
+//const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'https://onrenderlabweek11.onrender.com';
 //const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'https://localhost:3001';
 
 
