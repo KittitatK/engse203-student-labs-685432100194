@@ -62,7 +62,7 @@
   },
   {
     "week": "week-05",
-    "title": "React Campus Service Request",
+    "title": "React Routing, Data Fetching และ Front-end Mini App",
     "status": "submitted",
     "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-05/labs/week-05",
     "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
@@ -78,7 +78,7 @@
   },
   {
     "week": "week-06",
-    "title": "React Campus Service Request",
+    "title": "Node.js / Express API Foundation",
     "status": "submitted",
     "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-06/labs/week-06",
     "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
@@ -99,7 +99,7 @@
     "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-07/labs/week-07",
     "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
     "originalCommit": "5db2a617a8d3e9c1711261a531a10bb73ad44e1a",
-    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/25",
+    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/24",
     "submissionTag": "lab-07-submission-v1",
     "testStatus": "pass",
     "notes": "Static site ต้องมี index.html ที่ publish root",
@@ -107,5 +107,37 @@
     "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-07/labs/week-07/source",
     "hasPublish": true,
     "sourceEntries": 6
+  },
+  {
+    "week": "week-09",
+    "title": "Relational Database & SQL (SQLite)",
+    "status": "submitted",
+    "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-09/labs/week-09",
+    "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
+    "originalCommit": "691a1ab5c9f241482007063e151b67236276cd76",
+    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/29",
+    "submissionTag": "lab-09-submission-v1",
+    "testStatus": "pass",
+    "notes": "Relational Database Design (1:N), SQLite Schema & Constraints, SQL Queries (8 ข้อ), Data Modeling (DATA_MODEL.md), Constraint Testing (CP25) และ Challenge ครบถ้วน (30/30 รายการ)",
+    "pageUrl": "https://KittitatK.github.io/engse203-student-labs-685432100194/labs/week-09/",
+    "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-09/labs/week-09/source",
+    "hasPublish": false,
+    "sourceEntries": 7
+  },
+  {
+    "week": "week-10",
+    "title": "Relational Database & SQL (SQLite)",
+    "status": "submitted",
+    "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/unit4/week-10/labs/week-10",
+    "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
+    "originalCommit": "1078f6ef9373acf7f6c1c467c8cd117186b5b909",
+    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/30",
+    "submissionTag": "lab-10-submission-v1",
+    "testStatus": "pass",
+    "notes": "เชื่อมต่อ Node.js เข้ากับ SQLite ด้วย node:sqlite, Data Mapping (JOIN/AS), Parameterized Queries ป้องกัน SQL Injection (CP31), Database Error Handling ด้วย AppError (CP32), Automated Testing ด้วย supertest (CP33), API Contract v2.0.0 (CP34), และ Challenge ครบถ้วน (31/31 รายการ)",
+    "pageUrl": "https://KittitatK.github.io/engse203-student-labs-685432100194/labs/week-10/",
+    "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-10/labs/week-10/source",
+    "hasPublish": true,
+    "sourceEntries": 7
   }
 ]
