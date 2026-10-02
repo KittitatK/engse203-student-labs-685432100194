@@ -14,6 +14,7 @@ const router = Router();
 router.get('/', (req, res) => {
   const db = getDbStatus();
   const ok = db.connected;
+  
   res.status(ok ? 200 : 503).json({
     status: ok ? 'ok' : 'degraded',
     env: config.env, uptime: Math.round(process.uptime()),

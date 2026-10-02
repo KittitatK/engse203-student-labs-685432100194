@@ -23,14 +23,9 @@ export function createApp() {
   app.use(express.json());
 
   // ④ route
-  if (config.isProd && existsSync(config.staticDir)) {
-    app.use(express.static(config.staticDir));
-    app.get(/^\/(?!api).*/, (req, res) =>
-    res.sendFile(path.join(config.staticDir, 'index.html')));
-  } else {
-    app.get('/', (req, res) => res.json({ message: 'API (dev) — หน้าเว็บอยู่ที่พอร์ต 5173' }));
-  }
+  
   /*app.get('/', (req, res) => {res.json({ message: 'Campus Service API is running', version: '2.0.0' }); });*/
+  app.get('/api', (req, res) => res.json({ message: 'Campus Service API is running' }));
   app.use('/api/health', healthRoutes);
   app.use('/api/requests', requestRoutes);
   app.use('/api/users', userRoutes);
@@ -46,6 +41,13 @@ export function createApp() {
    *      → ย้ายข้อความต้อนรับไปไว้ที่ /api และให้ '/' ตอบ JSON เฉพาะตอน dev
    *      (ไม่งั้นผู้ใช้เปิด URL บน cloud แล้วจะเห็น JSON แทนหน้าเว็บ)
    */
+  if (config.isProd && existsSync(config.staticDir)) {
+    app.use(express.static(config.staticDir));
+    app.get(/^\/(?!api).*/, (req, res) =>
+    res.sendFile(path.join(config.staticDir, 'index.html')));
+  } else {
+    app.get('/', (req, res) => res.json({ message: 'API (dev) — หน้าเว็บอยู่ที่พอร์ต 5173' }));
+  }
 
   // ⑥ ปิดท้าย
   app.use('/api/health', healthRoutes);
