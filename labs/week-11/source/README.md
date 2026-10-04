@@ -64,12 +64,15 @@ npm run build
 
 1. **Build ระบบทั้งหมด:**
    ```bash
+   cd source/api
+   npm install --include=dev
    npm run build
    ```
 
 2. **Start เซิร์ฟเวอร์ในโหมด Production:**
    * **Linux / macOS:**
      ```bash
+     npm install
      NODE_ENV=production npm start
      ```
    * **Windows PowerShell:**

@@ -139,5 +139,22 @@
     "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-10/labs/week-10/source",
     "hasPublish": true,
     "sourceEntries": 7
+  },
+  {
+    "week": "week-11",
+    "title": "Full-Stack Integration",
+    "status": "submitted",
+    "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/unit4/week-11/labs/week-11",
+    "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
+    "originalCommit": "db3bbd067474ac238d6f1db9337a06a2e31fb4e8",
+    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/",
+    "submissionTag": "lab-11-submission-v1",
+    "testStatus": "pass",
+    "notes": "Live Demo บน Render: https://campus-service-week11.onrender.com",
+    "resultUrl": "https://onrenderlabweek11.onrender.com/",
+    "pageUrl": "https://KittitatK.github.io/engse203-student-labs-685432100194/labs/week-11/",
+    "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-11/labs/week-11/source",
+    "hasPublish": false,
+    "sourceEntries": 17
   }
 ]
