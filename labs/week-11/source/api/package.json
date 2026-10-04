@@ -14,9 +14,11 @@
     "db:reset": "node --disable-warning=ExperimentalWarning scripts/setup-db.mjs --force"
   },
   "dependencies": {
+    "campus-service": "file:..",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.1.0",
+    "libsql": "^0.5.29",
     "morgan": "^1.12.1"
   },
   "devDependencies": {
