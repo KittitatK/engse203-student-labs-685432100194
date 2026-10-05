@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import * as controller from '../controllers/requestController.js';
 import { validateRequest } from '../middleware/validateRequest.js';
+import { authenticate, requireRole } from '../middleware/auth.js'; //เพิ่ม import authenticate และ requireRole จาก auth.js
+
 
 const router = Router();
 
@@ -10,7 +12,11 @@ router.post('/', validateRequest, controller.createRequest);
 router.get('/:id', controller.getRequest);
 // 🏫 TODO W13-AUTH (CP51): เปลี่ยนสถานะและลบ ได้เฉพาะเจ้าหน้าที่
 //   router.put('/:id', authenticate, requireRole('staff'), controller.updateRequestStatus);
-router.put('/:id', controller.updateRequestStatus);
-router.delete('/:id', controller.deleteRequest);
+
+//router.put('/:id', controller.updateRequestStatus);
+//router.delete('/:id', controller.deleteRequest);
+
+router.put('/:id', authenticate, requireRole('staff'), controller.updateRequestStatus);
+router.delete('/:id', authenticate, requireRole('staff'), controller.deleteRequest);
 
 export default router;
