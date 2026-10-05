@@ -8,7 +8,7 @@ const emptyForm = {
   priority: 'normal',
 };
 
-function validate(form) {
+function validate(form) {// frontend validation  ตรงนี้ไม่เหมือน backend validation เพราะ frontend ต้องการแสดง error ทีละช่อง ไม่ใช่รวมเป็น array
   const errors = {};
   if (form.requesterName.trim().length < 2) errors.requesterName = 'กรุณากรอกชื่ออย่างน้อย 2 ตัวอักษร';
   if (!form.requestType) errors.requestType = 'กรุณาเลือกประเภทคำร้อง';
