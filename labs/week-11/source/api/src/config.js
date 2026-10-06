@@ -18,7 +18,8 @@ export const config = {
   // TODO: เพิ่ม isProd, port, corsOrigin, dbFile, schemaFile, staticDir
   isProd: process.env.NODE_ENV === 'production',
   port: Number(process.env.PORT ?? 3001),
-  corsOrigin: process.env.CORS_ORIGIN ?? 'http://localhost:5173',
+  corsOrigin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',').map(s => s.trim())
+  : ['http://localhost:5173', 'https://kittitatk.github.io'],
   dbFile: process.env.DB_FILE ?? path.join(API_ROOT, 'data', 'campus.db'),
   staticDir: process.env.STATIC_DIR ?? path.join(API_ROOT, '..', 'frontend', 'dist'),
   //dbFile: process.env.DB_FILE ?? path.join(API_ROOT, 'data', 'campus.db'),
