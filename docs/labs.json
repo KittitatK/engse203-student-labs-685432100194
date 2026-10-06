@@ -98,8 +98,8 @@
     "status": "submitted",
     "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-07/labs/week-07",
     "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
-    "originalCommit": "5db2a617a8d3e9c1711261a531a10bb73ad44e1a",
-    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/24",
+    "originalCommit": "c54e616cf35a9fcece2e18f9b093f7f7f29854b7",
+    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/36",
     "submissionTag": "lab-07-submission-v1",
     "testStatus": "pass",
     "notes": "Static site ต้องมี index.html ที่ publish root",
@@ -154,6 +154,6 @@
     "pageUrl": "https://KittitatK.github.io/engse203-student-labs-685432100194/labs/week-11/",
     "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-11/labs/week-11/source",
     "hasPublish": true,
-    "sourceEntries": 17
+    "sourceEntries": 16
   }
 ]
