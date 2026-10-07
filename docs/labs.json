@@ -98,8 +98,8 @@
     "status": "submitted",
     "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-07/labs/week-07",
     "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
-    "originalCommit": "5db2a617a8d3e9c1711261a531a10bb73ad44e1a",
-    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/24",
+    "originalCommit": "8eef751edc1b5766c03d9801bd91f98dab3129c1",
+    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/37",
     "submissionTag": "lab-07-submission-v1",
     "testStatus": "pass",
     "notes": "Static site ต้องมี index.html ที่ publish root",
@@ -147,14 +147,13 @@
     "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/unit4/week-11/labs/week-11",
     "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
     "originalCommit": "b1b41cf01d8d998e33b063cbbe3ea0b0b0695cb3",
-    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/32",
+    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/35",
     "submissionTag": "lab-11-submission-v1",
     "testStatus": "pass",
-    "notes": "Live Demo บน Render: https://campus-service-week11.onrender.com",
-    "resultUrl": "https://onrenderlabweek11.onrender.com/",
+    "notes": "Live Demo บน Render: https://onrenderlabweek11.onrender.com/",
     "pageUrl": "https://KittitatK.github.io/engse203-student-labs-685432100194/labs/week-11/",
     "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-11/labs/week-11/source",
-    "hasPublish": false,
-    "sourceEntries": 17
+    "hasPublish": true,
+    "sourceEntries": 16
   }
 ]
