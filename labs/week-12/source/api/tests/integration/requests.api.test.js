@@ -133,3 +133,37 @@ describe('ข้อมูลผิดรูปแบบ', () => {
 
 // 🏫 TODO W12-DEBUG (CP47): regression test ของ bug จาก BUG_REPORTS.md
 //   เขียน test ที่ "ทำซ้ำอาการ" ก่อน → ต้อง fail → แก้โค้ด → test ผ่าน
+describe('ทดสอบ Coverage แอพลิเคชั่น', ()=> {
+  test('GET /api/health ควรตอบกลับ 200 (ทดสอบ health route)', async () => {
+    const res = await request(app).get('/api/health')
+    expect(res.status).toBe(200);
+    expect(res.body.status).toBe('ok');
+  })
+
+  test('GET /api/not-found ควรตอบกลับ 404 (ทดสอบ errorHandler สำหรับ API ที่ไม่มี)', async () => {
+    const res = await request(app).get('/api/not-found-mock');
+    expect(res.status).toBe(404);
+  });
+
+  test('GET /api/users → คืนค่ารายการผู้ใช้ทั้งหมด', async () => {
+    const r = await request(app).get('/api/users');
+    expect(r.status).toBe(200);
+    expect(Array.isArray(r.body)).toBe(true);
+  });
+
+  test('GET /api/users/1/requests → คืนค่าคำร้องของผู้ใช้รหัส 1', async () => {
+    const r = await request(app).get('/api/users/1/requests');
+    expect(r.status).toBe(200);
+    expect(Array.isArray(r.body)).toBe(true);
+  });
+
+  test('GET /api → คืนค่า 200 (ทดสอบหน้าแรก API)', async () => {
+    const r = await request(app).get('/api');
+    expect(r.status).toBe(200);
+  });
+
+  test('GET / → คืนค่า 200 (ทดสอบหน้าแรกสุด)', async () => {
+    const r = await request(app).get('/');
+    expect(r.status).toBe(200);
+  });
+});

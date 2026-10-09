@@ -154,6 +154,23 @@
     "pageUrl": "https://KittitatK.github.io/engse203-student-labs-685432100194/labs/week-11/",
     "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-11/labs/week-11/source",
     "hasPublish": true,
-    "sourceEntries": 16
+    "sourceEntries": 17
+  },
+  {
+    "week": "week-12",
+    "title": "Software Testing & Debugging",
+    "status": "submitted",
+    "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/unit5/week-12/labs/week-12",
+    "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
+    "originalCommit": "ba4d8d2f366460453f665bf5b6f323a40527fe66",
+    "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/38",
+    "submissionTag": "lab-12-submission-v1",
+    "testStatus": "pass",
+    "viewResultUrl": "https://onrenderlabweek11.onrender.com/",
+    "notes": "Live Demo บน Render: https://onrenderlabweek11.onrender.com/",
+    "pageUrl": "https://KittitatK.github.io/engse203-student-labs-685432100194/labs/week-12/",
+    "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-12/labs/week-12/source",
+    "hasPublish": true,
+    "sourceEntries": 17
   }
 ]
