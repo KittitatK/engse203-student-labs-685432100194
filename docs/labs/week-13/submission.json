@@ -1,0 +1,17 @@
+{
+  "week": "week-13",
+  "title": "Software Quality & Security (Validation, Password Hashing, JWT Auth, Role-Based Access Control)",
+  "status": "submitted",
+  "sourceOrigin": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/unit5/week-13/labs/week-13",
+  "originalRepoUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194",
+  "originalCommit": "c96ecb0ffcc4075c73dd8ec65f2c12eaa9e7888e",
+  "pullRequestUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/pull/39",
+  "submissionTag": "lab-13-submission-v1",
+  "testStatus": "pass",
+  "viewResultUrl": "https://engse203-student-labs-685432100194-1.onrender.com/",
+  "notes": "Live Demo บน Render: https://engse203-student-labs-685432100194-1.onrender.com/",
+  "pageUrl": "https://KittitatK.github.io/engse203-student-labs-685432100194/labs/week-13/",
+  "sourceUrl": "https://github.com/KittitatK/engse203-student-labs-685432100194/tree/lab/week-13/labs/week-13/source",
+  "hasPublish": false,
+  "sourceEntries": 19
+}

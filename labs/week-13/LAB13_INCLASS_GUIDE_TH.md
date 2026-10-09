@@ -165,9 +165,9 @@ test('ชื่อ 101 ตัว → ไม่ผ่าน', () => {
 
 ### ✓ ผ่าน CP48 เมื่อ
 
-- [ ] ชื่อ 100 ตัวผ่าน · 101 ตัวถูกปฏิเสธ
-- [ ] รายละเอียด 1000 ตัวผ่าน · 1001 ตัวถูกปฏิเสธ · สถานที่ 101 ตัวถูกปฏิเสธ
-- [ ] body ใหญ่เกิน 10kb → **413** เป็น JSON
+- [x] ชื่อ 100 ตัวผ่าน · 101 ตัวถูกปฏิเสธ
+- [x] รายละเอียด 1000 ตัวผ่าน · 1001 ตัวถูกปฏิเสธ · สถานที่ 101 ตัวถูกปฏิเสธ
+- [x] body ใหญ่เกิน 10kb → **413** เป็น JSON
 
 ### 💬 คำถามที่ต้องตอบได้
 
@@ -218,9 +218,9 @@ export function hashPassword(plain) {
 
 ### ✓ ผ่าน CP49 เมื่อ
 
-- [ ] `password.test.js` ผ่านทั้ง 10 ข้อ
-- [ ] hash ไม่มีรหัสผ่านจริงปนอยู่ และรหัสเดียวกัน 2 ครั้งได้ hash ต่างกัน
-- [ ] ตรวจ hash ของ `staff@rmutl.ac.th` ใน `schema.sql` ด้วย `staff1234` ได้ `true`
+- [x] `password.test.js` ผ่านทั้ง 10 ข้อ
+- [x] hash ไม่มีรหัสผ่านจริงปนอยู่ และรหัสเดียวกัน 2 ครั้งได้ hash ต่างกัน
+- [x] ตรวจ hash ของ `staff@rmutl.ac.th` ใน `schema.sql` ด้วย `staff1234` ได้ `true`
 
 ### 💬 คำถามที่ต้องตอบได้
 
@@ -287,10 +287,10 @@ curl -X POST localhost:3001/api/auth/login -H "Content-Type: application/json" \
 
 ### ✓ ผ่าน CP50 เมื่อ
 
-- [ ] login ถูก → 200 พร้อม token 3 ส่วน
-- [ ] payload มี `role: 'staff'` และ `exp` · ไม่มีรหัสผ่าน
-- [ ] รหัสผิด กับ อีเมลที่ไม่มี → 401 ข้อความเดียวกัน
-- [ ] ผู้แจ้งทั่วไป (ไม่มีรหัสผ่าน) เข้าสู่ระบบไม่ได้
+- [x] login ถูก → 200 พร้อม token 3 ส่วน
+- [x] payload มี `role: 'staff'` และ `exp` · ไม่มีรหัสผ่าน
+- [x] รหัสผิด กับ อีเมลที่ไม่มี → 401 ข้อความเดียวกัน
+- [x] ผู้แจ้งทั่วไป (ไม่มีรหัสผ่าน) เข้าสู่ระบบไม่ได้
 
 ### 💬 คำถามที่ต้องตอบได้
 
@@ -374,10 +374,10 @@ expect(r.status).toBe(403);
 
 ### ✓ ผ่าน CP51 เมื่อ
 
-- [ ] PUT ไม่มี token → 401 · token ปลอม → 401 · ไม่ใช่เจ้าหน้าที่ → 403
-- [ ] เจ้าหน้าที่ PUT → 200 และ DELETE → 204
-- [ ] GET และ POST ยังไม่ต้องเข้าสู่ระบบ
-- [ ] test ของเมื่อเช้าแก้ให้เข้าสู่ระบบแล้ว · BUG #1 ยังไม่กลับมา (ลบแล้วเพิ่มใหม่ → 201)
+- [x] PUT ไม่มี token → 401 · token ปลอม → 401 · ไม่ใช่เจ้าหน้าที่ → 403
+- [x] เจ้าหน้าที่ PUT → 200 และ DELETE → 204
+- [x] GET และ POST ยังไม่ต้องเข้าสู่ระบบ
+- [x] test ของเมื่อเช้าแก้ให้เข้าสู่ระบบแล้ว · BUG #1 ยังไม่กลับมา (ลบแล้วเพิ่มใหม่ → 201)
 
 ### 💬 คำถามที่ต้องตอบได้
 
@@ -443,10 +443,10 @@ git diff --cached     # อ่านสิ่งที่จะ commit จริ
 
 ### ✓ ผ่าน CP52 เมื่อ
 
-- [ ] production ไม่ตั้ง `JWT_SECRET` → ระบบไม่ยอม start
-- [ ] production: error ไม่ส่ง stack ให้ผู้ใช้
-- [ ] `.env.example` มี `JWT_SECRET=` ค่าว่าง และ `.gitignore` มี `.env`
-- [ ] `npm test --prefix api` ผ่านทุกข้อ และมี test ของทั้ง 401 และ 403
+- [x] production ไม่ตั้ง `JWT_SECRET` → ระบบไม่ยอม start
+- [x] production: error ไม่ส่ง stack ให้ผู้ใช้
+- [x] `.env.example` มี `JWT_SECRET=` ค่าว่าง และ `.gitignore` มี `.env`
+- [x] `npm test --prefix api` ผ่านทุกข้อ และมี test ของทั้ง 401 และ 403
 
 ### 💬 คำถามที่ต้องตอบได้
 
@@ -509,14 +509,14 @@ git tag lab-13-submission-v1 && git push origin lab-13-submission-v1
 
 ก่อนบอกใครว่า "ระบบพร้อมใช้" ต้องตอบ "ใช่" ได้ทุกข้อ
 
-- [ ] `npm test` ผ่านทั้งหมด (api + frontend)
-- [ ] `npm run build` ได้ไม่มี error
-- [ ] ไม่มี secret ใน git (`git ls-files | grep .env` เจอแค่ `.env.example` และ `frontend/.env.production` ที่ไม่มีค่าลับ — ไม่มี `api/.env`)
-- [ ] `.env.example` มีตัวแปรครบ ค่าว่าง
-- [ ] README บอกวิธีติดตั้ง · วิธีรัน · วิธี deploy · บัญชีทดสอบ
-- [ ] `/api/health` ผ่านบน URL จริง
-- [ ] `npm audit` ไม่มีระดับ high / critical (หรืออธิบายได้ว่าทำไม)
-- [ ] tag เวอร์ชัน `v1.0.0`
+- [x] `npm test` ผ่านทั้งหมด (api + frontend)
+- [x] `npm run build` ได้ไม่มี error
+- [x] ไม่มี secret ใน git (`git ls-files | grep .env` เจอแค่ `.env.example` และ `frontend/.env.production` ที่ไม่มีค่าลับ — ไม่มี `api/.env`)
+- [x] `.env.example` มีตัวแปรครบ ค่าว่าง
+- [x] README บอกวิธีติดตั้ง · วิธีรัน · วิธี deploy · บัญชีทดสอบ
+- [x] `/api/health` ผ่านบน URL จริง
+- [x] `npm audit` ไม่มีระดับ high / critical (หรืออธิบายได้ว่าทำไม)
+- [x] tag เวอร์ชัน `v1.0.0`
 
 ---
 
