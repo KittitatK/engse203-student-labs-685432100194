@@ -40,3 +40,7 @@ export function deleteRequest(req, res) {
   }
   res.status(204).end();
 }
+
+export function resetRequests(req, res) {
+  res.status(200).json(service.reset());
+}

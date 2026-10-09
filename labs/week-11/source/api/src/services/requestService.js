@@ -140,4 +140,12 @@ export function remove(id) {
   return target;
 }
 
+/** คืนข้อมูลตัวอย่างเริ่มต้นจาก schema.sql */
+export function reset() {
+  db.exec('PRAGMA foreign_keys = OFF');
+  db.exec(readFileSync(SCHEMA_FILE, 'utf8'));
+  db.exec('PRAGMA foreign_keys = ON');
+  return findAll();
+}
+
 
