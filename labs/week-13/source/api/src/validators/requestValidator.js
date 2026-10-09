@@ -49,7 +49,7 @@ export function validateRequestInput(input) {
     PRIORITIES.includes(input.priority) ? null : 'ความเร่งด่วนต้องเป็น normal หรือ urgent',
   ];
 
-  if (readText(input.requesterName).length < MIN_NAME) {
+  /*if (readText(input.requesterName).length < MIN_NAME) {   //note : versionเก่าที่ไม่เคร่งครัดเรื่องชนิดข้อมูล
     errors.push(`ชื่อผู้แจ้งต้องมีอย่างน้อย ${MIN_NAME} ตัวอักษร`);
   }
   if (!REQUEST_TYPES.includes(input.requestType)) {
@@ -63,7 +63,7 @@ export function validateRequestInput(input) {
   }
   if (!PRIORITIES.includes(input.priority)) {
     errors.push('ความเร่งด่วนต้องเป็น normal หรือ urgent');
-  }
+  }*/
   return errors.filter(Boolean);
 }
 

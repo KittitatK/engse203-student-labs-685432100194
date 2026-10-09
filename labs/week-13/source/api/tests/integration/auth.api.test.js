@@ -26,6 +26,8 @@ describe('POST /api/auth/login', () => {
 });
 
 describe('สิทธิ์ของ PUT / DELETE', () => {
+  const put = () => request(app).put('/api/requests/REQ-001').send({ status: 'completed' });
+
   test('ไม่มี token → 401', async () => {
     const r = await request(app).put('/api/requests/REQ-001').send({ status: 'completed' });
     expect(r.status).toBe(401);
@@ -36,7 +38,7 @@ describe('สิทธิ์ของ PUT / DELETE', () => {
   expect(wrong.status).toBe(401);
   expect(unknown.status).toBe(401);
   expect(wrong.body.error).toBe(unknown.body.error);
-});
+  });
 
   // 🏫 TODO W13-AUTH (CP51): เพิ่ม
   //   - token ที่ไม่ใช่เจ้าหน้าที่ → 403      ใช้ tokenFor('requester')
@@ -44,4 +46,26 @@ describe('สิทธิ์ของ PUT / DELETE', () => {
   //   - เจ้าหน้าที่ → PUT 200 และ DELETE 204  ใช้ await loginAsStaff(app)
   //   ⚠ หลังผูก authenticate แล้ว test ของ PUT/DELETE ใน requests.api.test.js จะพัง (401)
   //     — นั่นคือสัญญาณว่า requirement เปลี่ยน: แก้ test ให้เข้าสู่ระบบก่อน
+
+  test('token ที่เซ็นด้วย secret อื่น (ปลอม) → 401', async () => {
+    const r = await put().set('Authorization', `Bearer ${tokenFor('staff', 'not-the-real-secret')}`);
+    expect(r.status).toBe(401);
+  });
+  test('token ถูกต้องแต่ไม่ใช่เจ้าหน้าที่ → 403', async () => {
+    const r = await put().set('Authorization', `Bearer ${tokenFor('requester')}`);
+    expect(r.status).toBe(403);
+  });
+  test('เจ้าหน้าที่ → PUT 200 และ DELETE 204', async () => {
+    const auth = `Bearer ${await loginAsStaff(app)}`;
+    await put().set('Authorization', auth).expect(200);
+    await request(app).delete('/api/requests/REQ-002').set('Authorization', auth).expect(204);
+  });
+  test('ส่งคำร้อง (POST) และดูรายการ (GET) ยังไม่ต้องเข้าสู่ระบบ', async () => {
+    await request(app).get('/api/requests').expect(200);
+    await request(app).post('/api/requests').send({
+      requesterName: 'นักศึกษา ทั่วไป', requestType: 'แจ้งซ่อม', location: 'ห้อง 205',
+      details: 'ไฟห้องเรียนดับสองดวง', priority: 'normal',
+    }).expect(201);
+  });
+
 });
