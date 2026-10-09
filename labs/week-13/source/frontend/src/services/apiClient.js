@@ -3,6 +3,8 @@
  * ทุกฟังก์ชันใน requestService เรียกผ่านตรงนี้
  */
 
+import { getToken, clearToken } from './authStore.js';
+
 const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:3001';
 
 /** error ที่รู้ว่ามาจาก API พร้อม status ที่ได้กลับมา */
@@ -31,7 +33,8 @@ async function parseError(response) {
  */
 export async function apiFetch(path, options = {}) {
   let response;
-  const token = localStorage.getItem('token');
+  //const token = localStorage.getItem('token');
+  const token = getToken();
   const authHeader = token ? { Authorization: `Bearer ${token}` } : {};
 
   try {
@@ -49,6 +52,9 @@ export async function apiFetch(path, options = {}) {
   }
 
   if (!response.ok) {
+    if (response.status === 401 && token) {
+      clearToken();
+    }
     throw new ApiError(await parseError(response), response.status);
   }
 

@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import * as authService from '../services/authService.js';
+import * as requestService from '../services/requestService.js';
+import { hashPassword } from '../utils/password.js';
 import { validateLoginInput } from '../validators/requestValidator.js';
 
 // route ให้มาแล้ว — งานหลักอยู่ใน services/authService.js (CP50)
@@ -45,7 +47,6 @@ router.post('/login', (req, res) => {
   res.status(200).json(result);
 });
 
-
 /*router.post('/login', (req, res) => { //code เก่าก่อนตั้งค่าให้กรอกรหัสผิดได้แค่5ครั้ง
   const errors = validateLoginInput(req.body);
   if (errors.length > 0) {
@@ -57,5 +58,15 @@ router.post('/login', (req, res) => {
   }
   res.status(200).json(result);
 });*/
+router.post('/register', (req, res) => {
+  const { email, password, name = 'เจ้าหน้าที่' } = req.body;
+  if (!email || !password || password.length < 4) {
+    return res.status(400).json({ error: 'กรุณาระบุอีเมลและรหัสผ่าน (อย่างน้อย 4 ตัวอักษร)' });
+  }
+  const passwordHash = hashPassword(password);
+  requestService.upsertStaff({ email, name, passwordHash });
+  const result = authService.login(email, password);
+  res.status(201).json({ message: 'ลงทะเบียนสำเร็จ', ...result });
+});
 
 export default router;

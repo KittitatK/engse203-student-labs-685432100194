@@ -8,6 +8,7 @@ const router = Router();
 
 // route เจาะจงต้องมาก่อน route ที่มี :id เสมอ
 router.get('/', controller.listRequests);
+router.post('/reset', controller.resetRequests);
 router.post('/', validateRequest, controller.createRequest);
 router.get('/:id', controller.getRequest);
 // 🏫 TODO W13-AUTH (CP51): เปลี่ยนสถานะและลบ ได้เฉพาะเจ้าหน้าที่

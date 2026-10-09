@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import useAuth from '../hooks/useAuth.js';
 
 const links = [
   ['/', 'Dashboard'],
@@ -7,6 +8,8 @@ const links = [
 ];
 
 function AppHeader() {
+  const { user, isStaff, logout } = useAuth();
+
   return (
     <header className="site-header">
       <div className="container header-inner">
@@ -25,6 +28,29 @@ function AppHeader() {
               {label}
             </NavLink>
           ))}
+          {isStaff ? (
+            <button
+              type="button"
+              className="nav-link"
+              onClick={logout}
+              style={{
+                background: 'transparent',
+                cursor: 'pointer',
+                font: 'inherit',
+                textAlign: 'center',
+              }}
+              title="ออกจากระบบ"
+            >
+              ออกจากระบบ ({user?.name || 'เจ้าหน้าที่ฝ่ายบริการ'})
+            </button>
+          ) : (
+            <NavLink
+              className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}
+              to="/login"
+            >
+              เจ้าหน้าที่
+            </NavLink>
+          )}
         </nav>
       </div>
     </header>
